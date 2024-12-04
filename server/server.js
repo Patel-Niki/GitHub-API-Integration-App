@@ -9,7 +9,7 @@ const PORT = process.env.PORT
 const CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
-app.get('/', (res) => {
+app.get('/', (req, res) => {
     res.status(200).send("Hello from New Jersey");
 })
 
