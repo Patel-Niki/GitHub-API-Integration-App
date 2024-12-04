@@ -47,7 +47,7 @@ app.get('/auth/callback', async (req, res) => {
         });
 
         const user = userResponse.data;
-        res.redirect(`http://localhost:3000/home?token=${accessToken}&username=${user.login}`);
+        res.redirect(`http://localhost:3000/home?token=${accessToken}&username=${user.login}&avatar=${user.avatar_url}`);
     } catch (error) {
         console.error(error);
         res.status(500).send('Authentication failed');
