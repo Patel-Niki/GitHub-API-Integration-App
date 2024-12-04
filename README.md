@@ -47,4 +47,24 @@ GITHUB_CLIENT_SECRET=<your-github-client-secret>
 GITHUB_REDIRECT_URI=http://localhost:3001/auth/github/callback
 ```
 
-- To get your GitHub Client ID and Client Secret, create an OAuth App on GitHub by following these instructions.
+- To get your GitHub Client ID and Client Secret, create an OAuth App on GitHub by following [these instructions](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app).
+
+## Usage
+### 1. Start the Backend Server
+
+```bash
+cd server
+npm start
+```
+
+- This will start the backend server on port 3001 by default. To change the port, modify the PORT value in the .env file or directly in the server code.
+
+### 2. Start the Frontend
+
+```bash
+cd client
+npm run dev
+```
+
+- This will start the React development server on port 3000 by default.
+- Visit http://localhost:3000 in your browser.
