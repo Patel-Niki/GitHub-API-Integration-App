@@ -7,7 +7,7 @@ const HomePage = () => {
     const { username } = useAuth();
  
     return (
-        <div className="">
+        <div>
           <Navbar />
             <h1 className="text-2xl">Welcome, {username}!</h1>
             <p>You are successfully authenticated with GitHub.</p>
