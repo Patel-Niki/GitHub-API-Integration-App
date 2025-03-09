@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-
 import { FiMenu } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa6";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
-  const [searchParams] = useSearchParams();
-  const token = searchParams.get("token");
-  const username = searchParams.get("username");
-  const profile = searchParams.get("avatar");
-  const [error, setError] = useState(null);
+  const { username, avatarUrl, error } = useAuth();
 
-  console.log(profile);
-
-  useEffect(() => {
-    if (!token || !username || !profile) {
-      setError("Authentication Data is missing");
-    } else {
-      console.log(`Authenticated as ${username} with token: ${token}`);
-    }
-  }, [error, token, username, profile]);
+  if (error) {
+    return <div className="p-8 text-red-500">{error}</div>;
+  }
 
   return (
     <>
@@ -47,14 +35,12 @@ const Navbar = () => {
                                         w-[15rem]"
               />
               <div className="h-5 border-l mx-4 border-gray-300"></div>
-              {profile ? (
+              {avatarUrl && (
                 <img
-                  src={profile}
+                  src={avatarUrl}
                   alt="Profile"
-                  className="w-9 h-9 rounded-full ml-2 border border-gray-200"
+                  className="w-9 h-9 rounded-full ml-2 border border-gray-300"
                 />
-              ) : (
-                <div className="w-5 h-5 rounded-full bg-gray-300 ml-2"></div>
               )}
             </div>
           </div>
