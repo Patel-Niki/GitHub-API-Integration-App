@@ -35,7 +35,6 @@ const HomePage = () => {
             <p className="text-2xl text-gray-500">{username}</p>
           </div>
         </div>
-
         <div className="">
           <div className="max-w-8xl w-full mx-auto ">
             <div className="flex gap-x-8">
@@ -94,6 +93,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
