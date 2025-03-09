@@ -42,9 +42,9 @@ npm install
 - Create a .env file in the backend directory (server/) and configure the following:
 
 ```bash
+PORT=<port>
 GITHUB_CLIENT_ID=<your-github-client-id>
 GITHUB_CLIENT_SECRET=<your-github-client-secret>
-GITHUB_REDIRECT_URI=http://localhost:3001/auth/github/callback
 ```
 
 - To get your GitHub Client ID and Client Secret, create an OAuth App on GitHub by following [these instructions](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app).
